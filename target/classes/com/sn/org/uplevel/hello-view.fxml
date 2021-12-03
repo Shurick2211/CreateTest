@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: bfe8ac;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sn.org.uplevel.HelloController">
+   <children>
+      <Label fx:id="erName" layoutX="752.0" layoutY="9.0" prefHeight="35.0" prefWidth="272.0" textFill="#f20404">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="18.0" layoutY="45.0" prefHeight="17.0" prefWidth="287.0" text="Введите вопрос?" />
+      <Label layoutX="14.0" layoutY="151.0" prefHeight="17.0" prefWidth="386.0" text="Введите ответы:" />
+      <TextField fx:id="answ1" layoutX="14.0" layoutY="172.0" prefHeight="25.0" prefWidth="196.0" />
+      <TextField fx:id="answ2" layoutX="245.0" layoutY="172.0" prefHeight="25.0" prefWidth="196.0" />
+      <TextField fx:id="answ3" layoutX="481.0" layoutY="172.0" prefHeight="25.0" prefWidth="196.0" />
+      <TextField fx:id="answ4" layoutX="717.0" layoutY="172.0" prefHeight="25.0" prefWidth="196.0" />
+      <CheckBox fx:id="checkBox1" layoutX="14.0" layoutY="206.0" mnemonicParsing="false" text="Правильный" />
+      <CheckBox fx:id="checkBox2" layoutX="245.0" layoutY="206.0" mnemonicParsing="false" text="Правильный" />
+      <CheckBox fx:id="checkBox3" layoutX="481.0" layoutY="206.0" mnemonicParsing="false" text="Правильный" />
+      <CheckBox fx:id="checkBox4" layoutX="717.0" layoutY="206.0" mnemonicParsing="false" text="Правильный" />
+      <TableView fx:id="tableView" layoutX="12.0" layoutY="320.0" prefHeight="303.0" prefWidth="934.0">
+        <columns>
+          <TableColumn fx:id="N" prefWidth="41.0" text="№" />
+          <TableColumn fx:id="quCol" prefWidth="384.0" text="Вопрос" />
+            <TableColumn prefWidth="134.0" text="1. Ответ">
+               <columns>
+                  <TableColumn fx:id="an1" prefWidth="87.0" text="Ответ" />
+                  <TableColumn fx:id="b1" prefWidth="40.0" text="Бал" />
+               </columns></TableColumn>
+            <TableColumn prefWidth="85.0" text="2. Ответ">
+               <columns>
+                  <TableColumn fx:id="an2" prefWidth="87.0" text="Ответ" />
+                  <TableColumn fx:id="b2" prefWidth="40.0" text="Бал" />
+               </columns></TableColumn>
+            <TableColumn prefWidth="97.0" text="3. Ответ">
+               <columns>
+                  <TableColumn fx:id="an3" prefWidth="87.0" text="Ответ" />
+                  <TableColumn fx:id="b3" prefWidth="40.0" text="Бал" />
+               </columns></TableColumn>
+
+            <TableColumn prefWidth="128.0" text="4. Ответ">
+               <columns>
+                  <TableColumn fx:id="an4" prefWidth="87.0" text="Ответ" />
+                  <TableColumn fx:id="b4" prefWidth="40.0" text="Бал" />
+               </columns></TableColumn>
+        </columns>
+      </TableView>
+      <Button layoutX="12.0" layoutY="273.0" mnemonicParsing="false" onAction="#addQu" prefHeight="35.0" prefWidth="842.0" text="Добавить вопрос!">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <TextField fx:id="bal1" layoutX="12.0" layoutY="239.0" prefHeight="25.0" prefWidth="55.0" />
+      <Label layoutX="84.0" layoutY="243.0" text="Бал за ответ" />
+      <TextField fx:id="bal2" layoutX="245.0" layoutY="239.0" prefHeight="25.0" prefWidth="55.0" />
+      <TextField fx:id="bal3" layoutX="481.0" layoutY="239.0" prefHeight="25.0" prefWidth="55.0" />
+      <TextField fx:id="bal4" layoutX="717.0" layoutY="239.0" prefHeight="25.0" prefWidth="55.0" />
+      <Label layoutX="329.0" layoutY="243.0" text="Бал за ответ" />
+      <Label layoutX="558.0" layoutY="243.0" text="Бал за ответ" />
+      <Label layoutX="801.0" layoutY="243.0" text="Бал за ответ" />
+      <Button layoutX="950.0" layoutY="348.0" mnemonicParsing="false" onAction="#editRow" prefHeight="25.0" prefWidth="70.0" text="Изменить" />
+      <Button layoutX="950.0" layoutY="384.0" mnemonicParsing="false" onAction="#deletRow" prefHeight="25.0" prefWidth="70.0" text="Удалить" />
+      <TextArea fx:id="quArea" layoutX="12.0" layoutY="62.0" prefHeight="91.0" prefWidth="901.0" />
+      <TextArea fx:id="rezArea1" layoutX="18.0" layoutY="663.0" prefHeight="91.0" prefWidth="200.0" />
+      <TextArea fx:id="rezArea2" layoutX="236.0" layoutY="663.0" prefHeight="91.0" prefWidth="200.0" />
+      <TextArea fx:id="rezArea3" layoutX="458.0" layoutY="663.0" prefHeight="91.0" prefWidth="200.0" />
+      <TextArea fx:id="rezArea4" layoutX="677.0" layoutY="663.0" prefHeight="91.0" prefWidth="196.0" />
+      <Label layoutX="18.0" layoutY="637.0" text="Результаты Теста" />
+      <TextField fx:id="nameTest" layoutX="430.0" layoutY="15.0" prefHeight="25.0" prefWidth="315.0" />
+      <Label layoutX="333.0" layoutY="15.0" prefHeight="17.0" prefWidth="94.0" text="Назавние Теста:" />
+      <Button layoutX="906.0" layoutY="669.0" mnemonicParsing="false" onAction="#addDb" prefHeight="77.0" prefWidth="94.0" text="Добавить Тест в Базу Данных" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
