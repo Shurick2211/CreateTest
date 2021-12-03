@@ -1,6 +1,7 @@
 package com.sn.org.uplevel;
 
 public class Question {
+    private String N;
     private String qu;
     private String an1;
     private String an2;
@@ -11,7 +12,8 @@ public class Question {
     private String b3;
     private String b4;
 
-    public Question(String qu, String an1, String an2, String an3, String an4, String b1, String b2, String b3, String b4) {
+    public Question(String N,String qu, String an1, String an2, String an3, String an4, String b1, String b2, String b3, String b4) {
+        this.N = N;
         this.qu = qu;
         this.an1 = an1;
         this.an2 = an2;
@@ -21,6 +23,14 @@ public class Question {
         this.b2 = b2;
         this.b3 = b3;
         this.b4 = b4;
+    }
+
+    public String getN() {
+        return N;
+    }
+
+    public void setN(String n) {
+       this.N = n;
     }
 
     public String getQu() {

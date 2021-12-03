@@ -42,13 +42,15 @@ public class HelloController {
     @FXML
     TableColumn<Question,String> b4;
     Question question;
-
+    int i=0;
 
     @FXML
     ObservableList<Question> questions = FXCollections.observableArrayList();
 
     public void initialize(){
         tableView.itemsProperty().setValue(questions);
+
+        N.setCellValueFactory(c->new SimpleStringProperty(c.getValue().getN()));
         quCol.setCellValueFactory(c->new SimpleStringProperty(c.getValue().getQu()));
         an1.setCellValueFactory(c->new SimpleStringProperty(c.getValue().getAn1()));
         an2.setCellValueFactory(c->new SimpleStringProperty(c.getValue().getAn2()));
@@ -65,9 +67,24 @@ public class HelloController {
     @FXML
     protected void addQu() {
         if(!quArea.getText().isEmpty()){
-           question=new Question(quArea.getText(),answ1.getText(),answ2.getText(),answ3.getText(),answ4.getText(),bal1.getText(),
-                   bal2.getText(),bal4.getText(),bal4.getText());
+           question=new Question(i+"",quArea.getText(),answ1.getText(),answ2.getText(),answ3.getText(),answ4.getText(),bal1.getText(),
+                   bal2.getText(),bal3.getText(),bal4.getText());
+          if(checkBox1.isSelected()&(bal1.getText().isEmpty()||bal1.getText().equals("")))
+          question.setB1("+");
+          if(checkBox2.isSelected()&(bal2.getText().isEmpty()||bal2.getText().equals("")))
+                question.setB2("+");
+          if(checkBox3.isSelected()&(bal3.getText().isEmpty()||bal3.getText().equals("")))
+                question.setB3("+");
+          if(checkBox4.isSelected()&(bal4.getText().isEmpty()||bal4.getText().equals("")))
+                question.setB4("+");
            questions.add(question);
+           i=0;
+            questions.forEach(c->{
+                i++;
+                c.setN(i+"");});
+            tableView.refresh();
+
+
         }
     }
     @FXML
@@ -77,6 +94,11 @@ public class HelloController {
     @FXML
     protected void deletRow() {
         questions.remove(tableView.getSelectionModel().getSelectedItem());
+        i=0;
+        questions.forEach(c->{
+            i++;
+            c.setN(i+"");});
+
     }
     @FXML
     protected void addDb() {
