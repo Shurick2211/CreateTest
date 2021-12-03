@@ -60,7 +60,9 @@
       <Label layoutX="329.0" layoutY="243.0" text="Бал за ответ" />
       <Label layoutX="558.0" layoutY="243.0" text="Бал за ответ" />
       <Label layoutX="801.0" layoutY="243.0" text="Бал за ответ" />
+     <!--
       <Button layoutX="950.0" layoutY="348.0" mnemonicParsing="false" onAction="#editRow" prefHeight="25.0" prefWidth="70.0" text="Изменить" />
+      -->
       <Button layoutX="950.0" layoutY="384.0" mnemonicParsing="false" onAction="#deletRow" prefHeight="25.0" prefWidth="70.0" text="Удалить" />
       <TextArea fx:id="quArea" layoutX="12.0" layoutY="62.0" prefHeight="91.0" prefWidth="901.0" />
       <TextArea fx:id="rezArea1" layoutX="18.0" layoutY="663.0" prefHeight="91.0" prefWidth="200.0" />
