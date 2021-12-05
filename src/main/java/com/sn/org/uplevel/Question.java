@@ -1,7 +1,7 @@
 package com.sn.org.uplevel;
 
 public class Question {
-    private String N;
+    private Integer N;
     private String qu;
     private String an1;
     private String an2;
@@ -12,7 +12,7 @@ public class Question {
     private String b3;
     private String b4;
 
-    public Question(String N,String qu, String an1, String an2, String an3, String an4, String b1, String b2, String b3, String b4) {
+    public Question(Integer N,String qu, String an1, String an2, String an3, String an4, String b1, String b2, String b3, String b4) {
         this.N = N;
         this.qu = qu;
         this.an1 = an1;
@@ -25,11 +25,11 @@ public class Question {
         this.b4 = b4;
     }
 
-    public String getN() {
+    public Integer getN() {
         return N;
     }
 
-    public void setN(String n) {
+    public void setN(Integer n) {
        this.N = n;
     }
 

@@ -1,10 +1,6 @@
 package com.sn.org.uplevel;
 
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleSetProperty;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -20,7 +16,7 @@ public class HelloController {
     @FXML
     CheckBox checkBox1,checkBox2,checkBox3,checkBox4;
     @FXML
-    TableView tableView=new TableView();
+    TableView tableView;
     @FXML
     TableColumn<Question,String> N;
     @FXML
@@ -50,7 +46,7 @@ public class HelloController {
     public void initialize(){
         tableView.itemsProperty().setValue(questions);
 
-        N.setCellValueFactory(c->new SimpleStringProperty(c.getValue().getN()));
+        N.setCellValueFactory(c->new SimpleStringProperty(c.getValue().getN()+""));
         quCol.setCellValueFactory(c->new SimpleStringProperty(c.getValue().getQu()));
         an1.setCellValueFactory(c->new SimpleStringProperty(c.getValue().getAn1()));
         an2.setCellValueFactory(c->new SimpleStringProperty(c.getValue().getAn2()));
@@ -67,7 +63,7 @@ public class HelloController {
     @FXML
     protected void addQu() {
         if(!quArea.getText().isEmpty()){
-           question=new Question(i+"",quArea.getText(),answ1.getText(),answ2.getText(),answ3.getText(),answ4.getText(),bal1.getText(),
+           question=new Question(i,quArea.getText(),answ1.getText(),answ2.getText(),answ3.getText(),answ4.getText(),bal1.getText(),
                    bal2.getText(),bal3.getText(),bal4.getText());
           if(checkBox1.isSelected()&(bal1.getText().isEmpty()||bal1.getText().equals("")))
           question.setB1("+");
@@ -81,7 +77,7 @@ public class HelloController {
            i=0;
             questions.forEach(c->{
                 i++;
-                c.setN(i+"");});
+                c.setN(i);});
             tableView.refresh();
 
 
@@ -97,7 +93,7 @@ public class HelloController {
         i=0;
         questions.forEach(c->{
             i++;
-            c.setN(i+"");});
+            c.setN(i);});
 
     }
     @FXML
